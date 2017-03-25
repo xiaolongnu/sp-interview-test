@@ -29,14 +29,13 @@ Simply use the dataframe to look up the keypresses for each letter in the input 
 Similiar to question 1, look up the number keys based on the letters from the input then string them together.
 
 ##### Question 3:
-Iteratively fetch a list of letters for each number in the input and perform pair-wise permutation with an list which accumlates the resulting permuates.
-Utilise "product" function from the itertools module in python standard library to perform the pair-wise permutation.
+Utilise "product" function from the itertools module in python standard library to perform permutation.
+Since the function allows indefinite amount of arguments, can just supply a list which contains list of letters from each each number in the input 
 
 ##### Question 4:
-Stores the words dictionary in a "set" data strucuture, which works like a hash table, hence able to quickly search for words in the dictionary.
+Stores the words dictionary in a "set" data strucuture, which works like a hash table, hence able to search quickly for words in the dictionary.
 Get a list of all possible words based on the input by calling question 3's function.
 Perform set's intersection operation against the said list and words dictionary, which results in only words from the list and words dictionary.
-
 
 
 ## Installation & Usage

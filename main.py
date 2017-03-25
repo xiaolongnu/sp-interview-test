@@ -13,21 +13,16 @@ WORDS = set(lines)
 
 
 def q1(word):
-    totalpresses = 0 # accumulator variable
-    # look up the keypresses based on each letter of the input then add it into totalpresses
-    for i in word:
-        totalpresses += df['keypresses'].loc[df.letter.values == i].values
-    return totalpresses[0]
+    # look up the keypresses based on each letter of the input then place them in a list
+    # when all keypresses are looked up, sum all the keypresses in the list
+    x = sum( [df['keypresses'].loc[df.letter.values == i].values for i in word] )
+    return x[0]
 
 
 def q2(word):
-    numList = [] # init list to store number keys
     # look up number key based on each letter of the input then append it into numList
-    for i in word:
-        numList.extend(df['num'].loc[df.letter.values == i].values)
-
-    return "".join(map(str, numList))
-
+    numList = [ df['num'].loc[df.letter.values == i].values[0] for i in word ]
+    return "".join(map(str,numList))
 
 def q3(inputnum):
     # get lists of letters from each number in input
@@ -47,3 +42,4 @@ def q4(inputnum):
 if __name__ == "__main__":
     # should santize the args or not use eval function for production, to prevent execution of arbitrary codes
     print eval(sys.argv[1]+'("'+sys.argv[2]+'")')
+

@@ -30,24 +30,13 @@ def q2(word):
 
 
 def q3(inputnum):
-    # return nothing if inputnum is empty
-    if not inputnum:
-        return
+    # get lists of letters from each number in input
+    lst = [df['letter'].loc[df.num.values == int(x)].values for x in inputnum]
 
-    # get list of letters from 1st number in input
-    a =  df['letter'].loc[df.num.values == int(inputnum[0])].values
-    
-    # iteratively get list of letters based on each number in input then perform permutation
-    for i in inputnum[1:]:
-        c = []
-        # get list of letters
-        b =  df['letter'].loc[df.num.values == int(i)].values
-        #perform pairwise permutation
-        for r in itertools.product(a, b): 
-            c.append(r[0] + r[1]) #store results in 'c'
-        a = c #save result to 'a'
+    # generate permutatations with 'itertools.product'.
+    # each permutation is a list, where its then convert to a string with the 'join' function
+    return ["".join(r) for r in itertools.product(*lst)]
 
-    return a
 
 def q4(inputnum):
     lst = set( q3(inputnum) ) # get all possible list of words then convert list to set type

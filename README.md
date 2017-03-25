@@ -2,9 +2,9 @@
 
 ## Brief introduction & approach
 
-#####Programming lanaguage: python
-#####Version: 2.7
-#####External Libaries: pandas
+##### Programming lanaguage: python
+##### Version: 2.7
+##### External Libaries: pandas
 
 The python programminglanaugage was chosen because its my most fluent language at the moment and host a compresensive range of libraries.
 
@@ -13,7 +13,7 @@ It have to quickly look up values given a word or number and fairly easy to use.
 Hence, the dataframe data structure was selected, which represents the properties of the keypad in a tabular form.
 
 pandas library is utilise to provide the dataframe data structure for this program.
-###The dataframe consists of 3 columns which represents:
+### The dataframe consists of 3 columns which represents:
 	* Numbers in the keypad
 	* Letters associated with the number 
 	* Key presses needed to enter the letter
@@ -21,18 +21,18 @@ pandas library is utilise to provide the dataframe data structure for this progr
 The total number of rows is about 26 which consist of all the letters.
 The table can view in `numpad.csv` file.
 
-###Approach for each question
-####Question 1:
+### Approach for each question
+#### Question 1:
 Simply use the dataframe to look up the keypresses for each letter in the input then sum them.
 
-#####Question 2:
+##### Question 2:
 Similiar to question 1, look up the number keys based on the letters from the input then string them together.
 
-#####Question 3:
+##### Question 3:
 Iteratively fetch a list of letters for each number in the input and perform pair-wise permutation with an list which accumlates the resulting permuates.
 Utilise "product" function from the itertools module in python standard library to perform the pair-wise permutation.
 
-#####Question 4:
+##### Question 4:
 Stores the words dictionary in a "set" data strucuture, which works like a hash table, hence able to quickly search for words in the dictionary.
 Get a list of all possible words based on the input by calling question 3's function.
 Perform set's intersection operation against the said list and words dictionary, which results in only words from the list and words dictionary.
@@ -74,5 +74,5 @@ Example:
 
 	docker run sp-interview-test python main.py q1 hello  #Output: 13
 	docker run sp-interview-test python main.py q2 hello  #Output: 43556
-	docker run sp-interview-test python main.py q3 23  	  #Output: ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
-	docker run sp-interview-test python main.py q4 2355	  #Output: ['cell', 'bell']
+	docker run sp-interview-test python main.py q3 23     #Output: ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
+	docker run sp-interview-test python main.py q4 2355   #Output: ['cell', 'bell']
